@@ -21439,6 +21439,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory){
 		 *  @return  {Tone.BufferSource}  this
 		 */
 	    Tone.BufferSource.prototype.stop = function (time, fadeOutTime) {
+
 	        if (this.buffer) {
 	            time = this.toSeconds(time);
 	            //the fadeOut time
@@ -22450,7 +22451,7 @@ var SoundPlayer = function () {
     }, {
         key: 'stop',
         value: function stop() {
-            if (this.bufferSource) {
+            if (this.bufferSource && this.isPlaying) {
                 this.bufferSource.stop();
             }
             this.isPlaying = false;
